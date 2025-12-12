@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1><%= title %></h1>
+    
+    <h2>Our Team</h2>
+    
+    <!-- Loop through array -->
+    <ul>
+        <% teamMembers.forEach(member => { %>
+            <li><%= member %></li>
+        <% }) %>
+    </ul>
+    
+    <!-- Alternative loop syntax -->
+    <ul>
+        <% for (let i = 0; i < teamMembers.length; i++) { %>
+            <li>Member <%= i + 1 %>: <%= teamMembers[i] %></li>
+        <% } %>
+    </ul>
+</div>
+
+<%- include('../partials/footer') %>

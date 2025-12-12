@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1><%= title %></h1>
+    <p><%= message %></p>
+    
+    <!-- Conditional Rendering -->
+    <% if (message.includes('Welcome')) { %>
+        <p class="highlight">Thanks for visiting!</p>
+    <% } %>
+</div>
+
+<%- include('../partials/footer') %>

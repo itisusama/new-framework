@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1>User Profile</h1>
+    
+    <div class="user-card">
+        <div class="user-avatar">
+            <img src="https://via.placeholder.com/150" alt="User Avatar">
+        </div>
+        
+        <div class="user-info">
+            <h2><%= user.name %></h2>
+            <p><strong>User ID:</strong> <%= user.id %></p>
+            <p><strong>Email:</strong> <%= user.email %></p>
+            <p><strong>Role:</strong> <%= user.role %></p>
+        </div>
+    </div>
+    
+    <!-- Show posts if user has any -->
+    <% if (user.posts && user.posts.length > 0) { %>
+        <h3>User Posts</h3>
+        <ul class="posts-list">
+            <% user.posts.forEach(post => { %>
+                <li>
+                    <a href="/post/<%= post.id %>"><%= post.title %></a>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>This user has no posts yet.</p>
+    <% } %>
+    
+    <a href="/" class="btn">← Back to Home</a>
+</div>
+
+<%- include('../partials/footer') %>
